@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="{% static 'accounts/images/main1.png' %}" alt="image">
+      <h2 class="c_heading">See Everyday moments from your<br> <span class="span">Close Friends</span></h2>
+      
+    </div>
+    <div class="col">
+      <div class="form">
+
+        <h2 class="text">Sign-up</h2>
+
+        <hr style="width:50%; margin:auto;">
+        <form method="post">
+          {% csrf_token %}
+
+          <label class="signup_label">Email: </label>
+          {{ form.email }}
+
+          <label class="signup_label">Username: </label>
+          {{ form.username }}
+
+          <label class="signup_label">Password: </label>
+          {{ form.password }}
+
+          <br>
+
+          <button type="submit" class="btn-btn-primary"><b>Register</b></button>
+
+
+        </form>
+
+        <p class="redirect_text">Already have account <a href="{% url 'login_view' %}" target="_blank">Login</a></p>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

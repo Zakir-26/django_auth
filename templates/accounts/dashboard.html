@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h1 style="font-size: 96px; color: rgb(210, 65, 21); text-align: center; justify-content: center;">Hello {{request.user.username}} </h1>
+
+<form method="post" action="{% url 'logout_view' %}">
+
+    {% csrf_token %}
+    <div style="text-align: center;">
+
+        <button style="text-align: center; font-weight: 500;" type="submit">Logout</button>
+
+    </div>
+
+</form>
+
+{% endblock %}

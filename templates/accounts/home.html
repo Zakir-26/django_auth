@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="{% static 'accounts/images/main2.png' %}" alt="image">
+      <h2 class="c_heading">Explore the things <br> <span class="span">You Love</span></h2>
+      
+    </div>
+    <div class="col">
+      <div class="form">
+
+        <h2 class="text">Log-in</h2>
+
+        <hr style="width:50%; margin:auto;">
+        <form method="post">
+          {% csrf_token %}
+          <div class="login_label">
+            <label>Username: </label> <br>
+          </div>
+          <input type="text" name="uname" placeholder="Username" required autofocus> <br>
+          <div class="login_label">
+            <label class="login_label">Password: </label> <br>
+          </div>
+          <input type="password" name="password" placeholder="Password"> <br>
+
+          <button type="submit" class="btn-btn-primary"><b>Login</b></button>
+
+        </form>
+
+        <p class="redirect_text">Don't have account <a href="{% url 'signup_view' %}" target="_blank">Create One</a></p>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
